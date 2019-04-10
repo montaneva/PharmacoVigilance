@@ -1,5 +1,5 @@
 # Pharmacovigilance
-Useful lists for PV databases or apps configuration and localization.
+Useful structured lists (csv, xml & sql files) for PV databases or apps configuration and localization.
 
 1. Active ingredients
 
