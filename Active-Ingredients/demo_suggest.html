@@ -1,0 +1,139 @@
+<html>
+<head><meta name="robots" content="none" />
+<title>jQuery Autocomplete Plugin Demo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+<style type="text/css">
+	h1 {font-size:110%; text-align:center; padding:20px; border-bottom:1px dotted #ddd}
+	h5 {margin:20px 0 10px; padding:0; font-size:100%; }
+	input {width:400px; font-size:16px;color:#888}
+	/* jQuery UI CSS Framework 1.8.20 */
+	.ui-helper-hidden-accessible{position:absolute !important;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px)}
+	.ui-widget-content{border:1px solid rgba(102,102,104,0.35);border-radius:4px;background-color:white;box-shadow:0 1px 2px rgba(0,0,0,0.25)}
+	.ui-dialog .ui-widget-content{border:none;border-radius:0;box-shadow:none}
+	.ui-widget :active{outline:none}
+	.ui-autocomplete{position:absolute;cursor:default}
+	* html .ui-autocomplete{width:1px}
+	/* jQuery UI Menu  http://docs.jquery.com/UI/Menu#theming */
+	.ui-menu{list-style:none;padding:2px;margin:0;display:block;float:left}
+	.ui-menu .ui-menu{ margin-top:-3px}
+	.ui-menu .ui-menu-item{ margin:0; padding:0; zoom:1; float:left; clear:left; width:100%}
+	.ui-menu .ui-menu-item a{ text-decoration:none;display:block;padding:0.2em 0.4em; line-height:1.5;zoom:1}
+</style>
+
+</head>
+<body>
+<h1>jQuery Autocomplete Plugin Demo</h1>
+
+<center>
+<form autocomplete="off" action="#" method="post">
+
+<!-- Start q101-->
+<div id="question101">
+	<h5>Please type your active ingredient [ <a href="https://github.com/montaneva/PharmacoVigilance/blob/master/Active-Ingredients/english/active_ingredients_EN.csv" target="new" title="show source">english</a> ]</h5>
+	<input autocomplete="off" class="text ui-autocomplete-input" type="text">	
+	<script type="text/javascript">
+        $(function() {
+        var qID = 101;
+        var url = 'https://raw.githubusercontent.com/montaneva/PharmacoVigilance/master/Active-Ingredients/english/active_ingredients_EN.csv';
+        var testArr = new Array();
+            $.get(url, function(data) {
+                fullArray = $.csv.toArrays(data);
+                $(fullArray).each(function(i, item) {
+                    testArr.push(item[0].slice(0, -1));
+                });
+                $('#question' + qID + ' input.text').autocomplete({
+                    source: testArr
+                });
+            });
+        });
+	</script>
+</div>
+<!-- End q101 -->
+
+<!-- Start q102-->
+<div id="question102">
+	<h5>Please type your active ingredient [ <a href="https://github.com/montaneva/PharmacoVigilance/blob/master/Active-Ingredients/french/active_ingredients_FR.csv" target="new" title="show source">french</a> ]</h5>
+	<input autocomplete="off" class="text ui-autocomplete-input" type="text">	
+	<script type="text/javascript">
+        $(function() {
+        var qID = 102;
+        var url = 'https://raw.githubusercontent.com/montaneva/PharmacoVigilance/master/Active-Ingredients/french/active_ingredients_FR.csv';
+        var testArr = new Array();
+            $.get(url, function(data) {
+                fullArray = $.csv.toArrays(data);
+                $(fullArray).each(function(i, item) {
+                    testArr.push(item[0].slice(0, -1));
+                });
+                $('#question' + qID + ' input.text').autocomplete({
+                    source: testArr
+                });
+            });
+        });
+	</script>
+</div>
+<!-- End q102 -->
+
+<!-- Start q103-->
+<div id="question103">
+	<h5>Please type your active ingredient [ <a href="https://github.com/montaneva/PharmacoVigilance/blob/master/Active-Ingredients/catalan/principis_actius.csv" target="new" title="show source">catalan</a> ]</h5>
+	<input autocomplete="off" class="text ui-autocomplete-input" type="text" >	
+	<script type="text/javascript">
+        $(function() {
+        var qID = 103;
+        var url = 'https://raw.githubusercontent.com/montaneva/PharmacoVigilance/master/Active-Ingredients/catalan/principis_actius.csv';
+        var testArr = new Array();
+            $.get(url, function(data) {
+                fullArray = $.csv.toArrays(data);
+                $(fullArray).each(function(i, item) {
+                    testArr.push(item[0].slice(0, -1));
+                });
+                $('#question' + qID + ' input.text').autocomplete({
+                    source: testArr
+                });
+            });
+        });
+	</script>
+</div>
+<!-- End q103 -->
+
+
+
+<!-- Start q104-->
+<div id="question104">
+	<h5>Please type your active ingredient [ <a href="https://github.com/montaneva/PharmacoVigilance/blob/master/Active-Ingredients/spanish/active_ingredients_ES.csv" target="new" title="show source">spanish</a> ]</h5>
+	<input autocomplete="off" class="text ui-autocomplete-input" type="text">	
+	<script type="text/javascript">
+        $(function() {
+        var qID = 104;
+        var url = 'https://raw.githubusercontent.com/montaneva/PharmacoVigilance/master/Active-Ingredients/spanish/active_ingredients_ES.csv';
+        var testArr = new Array();
+            $.get(url, function(data) {
+                fullArray = $.csv.toArrays(data);
+                $(fullArray).each(function(i, item) {
+                    testArr.push(item[0].slice(0, -1));
+                });
+                $('#question' + qID + ' input.text').autocomplete({
+                    source: testArr
+                });
+            });
+        });
+	</script>
+</div>
+<!-- End q104 -->
+	
+
+
+</form>
+</center>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	/**  jQuery-csv (jQuery Plugin) - version: 0.71 (2012-11-19) */
+   RegExp.escape=function(n){return n.replace(/[-\/\\^$*+?.()|[\]{}]/g,"\\$&")},function(n){"use strict";n.csv={defaults:{separator:";",delimiter:'"',headers:!0},hooks:{castToScalar:function(n){var r=/\./,i;return isNaN(n)?n:r.test(n)?parseFloat(n):(i=parseInt(n),isNaN(i)?null:i)}},parsers:{parse:function(n,t){function h(){if(i=0,r="",t.start&&t.state.rowNum<t.start){u=[],t.state.rowNum++,t.state.colNum=1;return}if(t.onParseEntry===undefined)c.push(u);else{var n=t.onParseEntry(u,t.state);n!==!1&&c.push(n)}u=[],t.end&&t.state.rowNum>=t.end&&(a=!0),t.state.rowNum++,t.state.colNum=1}function f(){if(t.onParseValue===undefined)u.push(r);else{var n=t.onParseValue(r,t.state);n!==!1&&u.push(n)}r="",i=0,t.state.colNum++}var s=t.separator,e=t.delimiter;t.state.rowNum||(t.state.rowNum=1),t.state.colNum||(t.state.colNum=1);var c=[],u=[],i=0,r="",a=!1;var v=RegExp.escape(s),y=RegExp.escape(e),l=/(D|S|\n|\r|[^DS\r\n]+)/,o=l.source;return o=o.replace(/S/g,v),o=o.replace(/D/g,y),l=RegExp(o,"gm"),n.replace(l,function(n){if(!a)switch(i){case 0:if(n===s){r+="",f();break}if(n===e){i=1;break}if(n==="\n"){f(),h();break}if(/^\r$/.test(n))break;r+=n,i=3;break;case 1:if(n===e){i=2;break}r+=n,i=1;break;case 2:if(n===e){r+=n,i=1;break}if(n===s){f();break}if(n==="\n"){f(),h();break}if(/^\r$/.test(n))break;throw new Error("CSVDataError: Illegal State [Row:"+t.state.rowNum+"][Col:"+t.state.colNum+"]");case 3:if(n===s){f();break}if(n==="\n"){f(),h();break}if(/^\r$/.test(n))break;if(n===e)throw new Error("CSVDataError: Illegal Quote [Row:"+t.state.rowNum+"][Col:"+t.state.colNum+"]");throw new Error("CSVDataError: Illegal Data [Row:"+t.state.rowNum+"][Col:"+t.state.colNum+"]");default:throw new Error("CSVDataError: Unknown State [Row:"+t.state.rowNum+"][Col:"+t.state.colNum+"]");}}),u.length!==0&&(f(),h()),c},splitLines:function(n,t){function o(){if(r=0,t.start&&t.state.rowNum<t.start){i="",t.state.rowNum++;return}if(t.onParseEntry===undefined)s.push(i);else{var n=t.onParseEntry(i,t.state);n!==!1&&s.push(n)}i="",t.end&&t.state.rowNum>=t.end&&(c=!0),t.state.rowNum++}var e=t.separator,u=t.delimiter;t.state.rowNum||(t.state.rowNum=1);var s=[],r=0,i="",c=!1;var l=RegExp.escape(e),a=RegExp.escape(u),h=/(D|S|\n|\r|[^DS\r\n]+)/,f=h.source;return f=f.replace(/S/g,l),f=f.replace(/D/g,a),h=RegExp(f,"gm"),n.replace(h,function(n){if(!c)switch(r){case 0:if(n===e){i+=n,r=0;break}if(n===u){i+=n,r=1;break}if(n==="\n"){o();break}if(/^\r$/.test(n))break;i+=n,r=3;break;case 1:if(n===u){i+=n,r=2;break}i+=n,r=1;break;case 2:var f=i.substr(i.length-1);if(n===u&&f===u){i+=n,r=1;break}if(n===e){i+=n,r=0;break}if(n==="\n"){o();break}if(n==="\r")break;throw new Error("CSVDataError: Illegal state [Row:"+t.state.rowNum+"]");case 3:if(n===e){i+=n,r=0;break}if(n==="\n"){o();break}if(n==="\r")break;if(n===u)throw new Error("CSVDataError: Illegal quote [Row:"+t.state.rowNum+"]");throw new Error("CSVDataError: Illegal state [Row:"+t.state.rowNum+"]");default:throw new Error("CSVDataError: Unknown state [Row:"+t.state.rowNum+"]");}}),i!==""&&o(),s},parseEntry:function(n,t){function o(){if(t.onParseValue===undefined)s.push(r);else{var n=t.onParseValue(r,t.state);n!==!1&&s.push(n)}r="",i=0,t.state.colNum++}var e=t.separator,u=t.delimiter;t.state.rowNum||(t.state.rowNum=1),t.state.colNum||(t.state.colNum=1);var s=[],i=0,r="";if(!t.match){var h=RegExp.escape(e),c=RegExp.escape(u),l=/(D|S|\n|\r|[^DS\r\n]+)/,f=l.source;f=f.replace(/S/g,h),f=f.replace(/D/g,c),t.match=RegExp(f,"gm")}return n.replace(t.match,function(n){switch(i){case 0:if(n===e){r+="",o();break}if(n===u){i=1;break}if(n==="\n"||n==="\r")break;r+=n,i=3;break;case 1:if(n===u){i=2;break}r+=n,i=1;break;case 2:if(n===u){r+=n,i=1;break}if(n===e){o();break}if(n==="\n"||n==="\r")break;throw new Error("CSVDataError: Illegal State [Row:"+t.state.rowNum+"][Col:"+t.state.colNum+"]");case 3:if(n===e){o();break}if(n==="\n"||n==="\r")break;if(n===u)throw new Error("CSVDataError: Illegal Quote [Row:"+t.state.rowNum+"][Col:"+t.state.colNum+"]");throw new Error("CSVDataError: Illegal Data [Row:"+t.state.rowNum+"][Col:"+t.state.colNum+"]");default:throw new Error("CSVDataError: Unknown State [Row:"+t.state.rowNum+"][Col:"+t.state.colNum+"]");}}),o(),s}},toArray:function(t,i,r){var i=i!==undefined?i:{},u={};u.callback=r!==undefined&&typeof r=="function"?r:!1,u.separator="separator"in i?i.separator:n.csv.defaults.separator,u.delimiter="delimiter"in i?i.delimiter:n.csv.defaults.delimiter;var e=i.state!==undefined?i.state:{},i={delimiter:u.delimiter,separator:u.separator,onParseEntry:i.onParseEntry,onParseValue:i.onParseValue,state:e},f=n.csv.parsers.parseEntry(t,i);if(u.callback)u.callback("",f);else return f},toArrays:function(t,i,r){var i=i!==undefined?i:{},u={},f;if(u.callback=r!==undefined&&typeof r=="function"?r:!1,u.separator="separator"in i?i.separator:n.csv.defaults.separator,u.delimiter="delimiter"in i?i.delimiter:n.csv.defaults.delimiter,f=[],i={delimiter:u.delimiter,separator:u.separator,onParseEntry:i.onParseEntry,onParseValue:i.onParseValue,start:i.start,end:i.end,state:{rowNum:1,colNum:1}},f=n.csv.parsers.parse(t,i),u.callback)u.callback("",f);else return f},toObjects:function(t,i,r){var i=i!==undefined?i:{},u={},f,l,a,s,h;u.callback=r!==undefined&&typeof r=="function"?r:!1,u.separator="separator"in i?i.separator:n.csv.defaults.separator,u.delimiter="delimiter"in i?i.delimiter:n.csv.defaults.delimiter,u.headers="headers"in i?i.headers:n.csv.defaults.headers,i.start="start"in i?i.start:1,u.headers&&i.start++,i.end&&u.headers&&i.end++;var c=[],e=[],i={delimiter:u.delimiter,separator:u.separator,onParseEntry:i.onParseEntry,onParseValue:i.onParseValue,start:i.start,end:i.end,state:{rowNum:1,colNum:1},match:!1},v={delimiter:u.delimiter,separator:u.separator,start:1,end:1,state:{rowNum:1,colNum:1}},y=n.csv.parsers.splitLines(t,v),o=n.csv.toArray(y[0],i),c=n.csv.parsers.splitLines(t,i);for(i.state.colNum=1,i.state.rowNum=o?2:1,f=0,l=c.length;f<l;f++){a=n.csv.toArray(c[f],i),s={};for(h in o)s[o[h]]=a[h];e.push(s),i.state.rowNum++}if(u.callback)u.callback("",e);else return e},fromArrays:function(t,r,u){var r=r!==undefined?r:{},f={},e;if(f.callback=u!==undefined&&typeof u=="function"?u:!1,f.separator="separator"in r?r.separator:n.csv.defaults.separator,f.delimiter="delimiter"in r?r.delimiter:n.csv.defaults.delimiter,f.escaper="escaper"in r?r.escaper:n.csv.defaults.escaper,f.experimental="experimental"in r?r.experimental:!1,!f.experimental)throw new Error("not implemented");e=[];for(i in t)e.push(t[i]);if(f.callback)f.callback("",e);else return e},fromObjects2CSV:function(t,r,u){var r=r!==undefined?r:{},f={},e;if(f.callback=u!==undefined&&typeof u=="function"?u:!1,f.separator="separator"in r?r.separator:n.csv.defaults.separator,f.delimiter="delimiter"in r?r.delimiter:n.csv.defaults.delimiter,f.experimental="experimental"in r?r.experimental:!1,!f.experimental)throw new Error("not implemented");e=[];for(i in t)e.push(arrays[i]);if(f.callback)f.callback("",e);else return e}},n.csvEntry2Array=n.csv.toArray,n.csv2Array=n.csv.toArrays,n.csv2Dictionary=n.csv.toObjects}(jQuery);
+</script>
+
+
+</body>
+</html>
